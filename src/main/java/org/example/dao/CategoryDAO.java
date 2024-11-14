@@ -42,7 +42,7 @@ public class CategoryDAO {
         Statement statement;
         ResultSet result=null;
         try{
-            String query=String.format("SELECT * from category where category='%s' or description i like '%s'",category);
+            String query=String.format("SELECT * FROM category WHERE category LIKE '%s' OR description ILIKE '%s'",category);
             statement=connection.createStatement();
             result=statement.executeQuery(query);
             while(result.next()){
@@ -88,7 +88,7 @@ public class CategoryDAO {
         Statement statement;
         ResultSet result=null;
         try{
-            String query=String.format("SELECT * from category where unity i like '%s'",unity);
+            String query=String.format("SELECT * FROM category WHERE unity ILIKE '%s'",unity);
             statement=connection.createStatement();
             result=statement.executeQuery(query);
             while(result.next()){

@@ -65,7 +65,7 @@ public class ProductDAO {
         Statement statement;
         ResultSet result=null;
         try{
-            String query=String.format("SELECT * from product where price='%s'",price);
+            String query=String.format("SELECT * FROM product WHERE price BETWEEN '%s' AND '%s'",price);
             statement=connection.createStatement();
             result=statement.executeQuery(query);
             while(result.next()){
@@ -88,7 +88,7 @@ public class ProductDAO {
         Statement statement;
         ResultSet result=null;
         try{
-            String query=String.format("SELECT * from product where sizes i like '%s'",sizes);
+            String query=String.format("SELECT * FROM product WHERE sizes ILIKE '%s'",sizes);
             statement=connection.createStatement();
             result=statement.executeQuery(query);
             while(result.next()){

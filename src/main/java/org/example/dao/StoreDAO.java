@@ -40,7 +40,7 @@ public class StoreDAO {
         Statement statement;
         ResultSet result=null;
         try{
-            String query=String.format("SELECT * from store where title or location ilike '%s'",title);
+            String query=String.format("SELECT * FROM store WHERE title ILIKE '%s' OR location ILIKE '%s'",title);
             statement=connection.createStatement();
             result=statement.executeQuery(query);
             while(result.next()){
