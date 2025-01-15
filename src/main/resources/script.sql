@@ -1,5 +1,5 @@
 --create database
-create database i_commerce;
+sudo -u postgres createdb i_commerce;
 
 --connection to the database
 \c i_commerce;
